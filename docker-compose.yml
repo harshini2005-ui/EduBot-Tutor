@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+    chroma:
+        image: 'chromadb/chroma'
+        ports:
+            - '8080:8000'
+        volumes:
+            - chroma-data:/chroma/chroma
+        env_file:
+            - .env
+
+volumes:
+    chroma-data:
+        driver: local
